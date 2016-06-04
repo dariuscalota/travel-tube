@@ -3,17 +3,14 @@ Travel Tube is a personal idea of developing a tube of high quality travel video
 
 ### Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
-
-You need Gulp installed globally:
+In rut folder run:
 
 ```sh
-$ npm i -g gulp
+$ npm install
 ```
 
+And to start application run:
+
 ```sh
-$ git clone [git-repo-url] dillinger
-$ cd dillinger
-$ npm i -d
-$ NODE_ENV=production node app
+$ npm start
 ```
