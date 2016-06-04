@@ -1,0 +1,15 @@
+.custom-valign {
+    margin-top: 10%;
+}
+
+.bg {
+    position:fixed ;
+    top:0;
+    width:100%;
+    z-index:0;
+    height:100%;
+}
+
+::-webkit-input-placeholder {
+   color:white;
+}
