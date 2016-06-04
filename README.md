@@ -3,7 +3,7 @@ Travel Tube is a personal idea of developing a tube of high quality travel video
 
 ### Installation
 
-In rut folder run:
+In root folder run:
 
 ```sh
 $ npm install
