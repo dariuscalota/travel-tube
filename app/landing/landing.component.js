@@ -9,31 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var LandingComponent = (function () {
-    function LandingComponent() {
+    function LandingComponent(router) {
+        this.router = router;
     }
-    LandingComponent.prototype.ngOnInit = function () {
-        $(".bg").interactive_bg({
-            strength: 30,
-            scale: 1.1,
-            animationSpeed: "300ms",
-            contain: true,
-            wrapContent: true
-        });
-        // change background size on window resize
-        $(window).resize(function () {
-            $(".bg > .ibg-bg").css({
-                width: $(window).outerWidth(),
-                height: $(window).outerHeight()
-            });
-        });
+    LandingComponent.prototype.onSubmit = function (data) {
+        this.data = JSON.stringify(data, null, 2);
+        console.log(this.data);
+        this.router.navigate(['Videos']);
     };
     LandingComponent = __decorate([
         core_1.Component({
             selector: 'landing',
-            templateUrl: 'app/landing/landing.component.html'
+            templateUrl: 'app/landing/landing.component.html',
+            styleUrls: ['app/landing/landing.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_deprecated_1.Router])
     ], LandingComponent);
     return LandingComponent;
 }());

@@ -1,9 +1,10 @@
-<div class="bg" data-ibg-bg="assets/images/background.jpg"></div>
-<div class="row custom-valign">
+<div class="row">
+    <br><br><br>
     <div class="col s12 l6 offset-l3">
-        <form>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
             <div class="input-field">
-                <input placeholder="Tell us where do you want to go" style="border-bottom: 4px solid white;" id="search" type="search" required>
+                <input placeholder="Tell us where do you want to go" style="border-bottom: 4px solid white;" id="search" type="search" required
+                    ngControl="search">
                 <label for="search"><i style="color: white; font-size: 30px;" class="material-icons">search</i></label>
             </div>
         </form>

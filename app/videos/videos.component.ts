@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component ({
     selector: 'videos',
-    template: `
-        <h1> Videos List </h1>
-    `
+    templateUrl: 'app/videos/videos.component.html',
+    styleUrls: ['app/videos/videos.css']
 })
+
 
 export class VideosComponent {
     

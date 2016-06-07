@@ -1,15 +1,6 @@
-.custom-valign {
-    margin-top: 10%;
-}
-
-.bg {
-    position:fixed ;
-    top:0;
-    width:100%;
-    z-index:0;
-    height:100%;
-}
-
-::-webkit-input-placeholder {
-   color:white;
+html {
+    background: url(../../assets/images/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+    -o-background-size: cover;
 }

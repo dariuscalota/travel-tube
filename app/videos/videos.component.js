@@ -15,7 +15,8 @@ var VideosComponent = (function () {
     VideosComponent = __decorate([
         core_1.Component({
             selector: 'videos',
-            template: "\n        <h1> Videos List </h1>\n    "
+            templateUrl: 'app/videos/videos.component.html',
+            styleUrls: ['app/videos/videos.css']
         }), 
         __metadata('design:paramtypes', [])
     ], VideosComponent);
