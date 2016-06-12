@@ -9,16 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var video_service_1 = require('../services/video.service');
 var VideosComponent = (function () {
-    function VideosComponent() {
+    function VideosComponent(_videoService) {
+        this._videoService = _videoService;
     }
+    VideosComponent.prototype.ngOnInit = function () {
+        this._videoService.getVideos()
+            .subscribe(function (videos) { return console.log(videos); });
+    };
     VideosComponent = __decorate([
         core_1.Component({
             selector: 'videos',
             templateUrl: 'app/videos/videos.component.html',
-            styleUrls: ['app/videos/videos.css']
+            styleUrls: ['app/videos/videos.css'],
+            providers: [video_service_1.VideoService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [video_service_1.VideoService])
     ], VideosComponent);
     return VideosComponent;
 }());

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
+import {Observable} from 'rxjs/Rx';
+
+
 import { LandingComponent } from './landing/landing.component';
 import { VideosComponent } from './videos/videos.component';
 
