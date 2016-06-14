@@ -13,10 +13,16 @@ var video_service_1 = require('../services/video.service');
 var VideosComponent = (function () {
     function VideosComponent(_videoService) {
         this._videoService = _videoService;
+        this.isLoading = true;
+        this.videos = [];
     }
     VideosComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this._videoService.getVideos()
-            .subscribe(function (videos) { return console.log(videos); });
+            .subscribe(function (videos) {
+            _this.isLoading = false;
+            _this.videos = videos.videos;
+        });
     };
     VideosComponent = __decorate([
         core_1.Component({

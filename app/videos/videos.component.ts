@@ -10,9 +10,14 @@ import {VideoService} from '../services/video.service';
 
 
 export class VideosComponent implements OnInit{
+    isLoading=true;
+    videos=[];
     ngOnInit() {
         this._videoService.getVideos()
-                          .subscribe(videos => console.log(videos));
+            .subscribe(videos => {
+                this.isLoading = false;
+                this.videos = videos.videos;
+            });
     }
 
     constructor(private _videoService: VideoService) {

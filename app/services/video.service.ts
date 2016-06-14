@@ -1,6 +1,8 @@
 import {Http} from '@angular/http';
-import 'rxjs/add/operator/map';
 import {Injectable} from '@angular/core';
+import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Observable';
+import {Video} from '../models/video';
 
 @Injectable()
 export class VideoService {
@@ -10,7 +12,7 @@ export class VideoService {
 
     }
 
-    getVideos() {
+    getVideos() : Observable<Video[]> {
         return this._http.get(this._url)
             .map(res => res.json());
     }

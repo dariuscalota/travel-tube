@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var http_1 = require('@angular/http');
-require('rxjs/add/operator/map');
 var core_1 = require('@angular/core');
+require('rxjs/add/operator/map');
 var VideoService = (function () {
     function VideoService(_http) {
         this._http = _http;
