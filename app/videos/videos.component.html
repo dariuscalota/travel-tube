@@ -1,6 +1,6 @@
 <div class="fourteen wide column videos">
     <div *ngIf="isLoading">
-        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw loader"></i>
         <span class="sr-only">Loading...</span>
     </div>
 
@@ -22,7 +22,7 @@
             </div>
             <div class="extra content">
                 <span class="right floated">
-                    {{ video.modified }}
+                    {{ video.modified | date:"MM/dd/yy" }}
                 </span>
                 <span>
                     <i class="user icon"></i>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {VideoService} from '../services/video.service';
+import { VideoService } from '../services/video.service';
 
 @Component ({
     selector: 'videos',
@@ -8,15 +8,14 @@ import {VideoService} from '../services/video.service';
     providers: [VideoService]
 })
 
-
 export class VideosComponent implements OnInit{
     isLoading=true;
-    videos=[];
+    videos;
     ngOnInit() {
         this._videoService.getVideos()
             .subscribe(videos => {
                 this.isLoading = false;
-                this.videos = videos.videos;
+                this.videos = videos;
             });
     }
 
