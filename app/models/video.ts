@@ -3,8 +3,8 @@ export interface Video {
     title: string;
     description: string;
     created: string;
-    modified: string;
+    modified: Date;
     videoUrl: string;
-    thumbnails: string[];
+    thumbnail: string;
     tags: string[];
 }

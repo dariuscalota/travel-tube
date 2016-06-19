@@ -1,15 +1,43 @@
+<div class="ui stackable blue inverted large menu">
+    <div class="item">
+        <img src="assets/images/logo_small.png">
+    </div>
+    <a class="active item">Videos</a>
+    <a class="item">Offers</a>
+    <a class="item">Contact</a>
+    <div class="right menu">
+        <div class="item">
+            <div class="ui primary button">Log In</div>
+        </div>
+        <div class="item">
+            <div class="ui primary button">Sign Up</div>
+        </div>
+    </div>
+</div>
+
 <div class="fourteen wide column videos">
+    <div class="ui two column stackable grid container">
+        <div class="column">
+            <h3 class="ui block header">
+                Search results for "{{searchParams}}"
+            </h3>
+        </div>
+        <div class="column">
+            <search [searchSize]="searchSize"></search>
+        </div>
+
+    </div>
+
     <div *ngIf="isLoading">
-        <i class="fa fa-spinner fa-spin fa-3x fa-fw loader"></i>
-        <span class="sr-only">Loading...</span>
+        <div class="ui large centered loader active inverted"></div>
     </div>
 
     <br/>
     <br/>
-    <div class="ui link cards">
+    <div class="ui link centered cards">
         <div *ngFor="let video of videos" class="card">
             <div class="image">
-                <img src="{{video.thumbnails[0]}}">
+                <img #levideo src="{{video.thumbnail}}">
             </div>
             <div class="content">
                 <div class="header">{{video.title}}</div>
@@ -22,11 +50,7 @@
             </div>
             <div class="extra content">
                 <span class="right floated">
-                    {{ video.modified | date:"MM/dd/yy" }}
-                </span>
-                <span>
-                    <i class="user icon"></i>
-                    0
+                    {{ video.modified }}
                 </span>
             </div>
         </div>

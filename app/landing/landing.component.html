@@ -1,12 +1,32 @@
-<div class="row">
-    <br><br><br>
-    <div class="col s12 l6 offset-l3">
-        <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-            <div class="input-field">
-                <input placeholder="Tell us where do you want to go" style="border-bottom: 4px solid white;" id="search" type="search" required
-                    ngControl="search">
-                <label for="search"><i style="color: white; font-size: 30px;" class="material-icons">search</i></label>
-            </div>
-        </form>
+<div class="ui middle aligned center aligned grid">
+    <div class="ten wide column">
+        <img width="500" src="assets/images/logo_big.png" class="image">
+        <search [searchSize]="searchSize"></search>
     </div>
+</div>
+<div class="ui basic modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Archive Old Messages
+  </div>
+  <div class="image content">
+    <div class="image">
+      <i class="archive icon"></i>
+    </div>
+    <div class="description">
+      <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="two fluid ui inverted buttons">
+      <div class="ui red basic inverted button">
+        <i class="remove icon"></i>
+        No
+      </div>
+      <div class="ui green basic inverted button">
+        <i class="checkmark icon"></i>
+        Yes
+      </div>
+    </div>
+  </div>
 </div>

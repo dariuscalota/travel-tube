@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
+import { SearchComponent } from '../widgets/search/search.component';
 
 @Component({
     selector: 'landing',
     templateUrl: 'app/landing/landing.component.html',
-    styleUrls: ['app/landing/landing.css']
+    styleUrls: ['app/landing/landing.css'],
+    directives: [SearchComponent]
 })
 
 export class LandingComponent {
-    constructor(private router: Router) { }
-    data: string;
-    onSubmit(data) {
-        this.data = JSON.stringify(data, null, 2);
-        console.log(this.data);
-        this.router.navigate(['Videos']);
-    }
+    searchSize="massive";
 }

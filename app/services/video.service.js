@@ -16,8 +16,9 @@ var VideoService = (function () {
         this._http = _http;
         this._url = "https://api-traveltube.herokuapp.com/videos";
     }
-    VideoService.prototype.getVideos = function () {
-        return this._http.get(this._url)
+    VideoService.prototype.getVideos = function (params) {
+        params = (params ? params : "");
+        return this._http.get(this._url + "?search=" + params)
             .map(function (res) { return res.json(); });
     };
     VideoService = __decorate([

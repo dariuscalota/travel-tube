@@ -9,23 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var search_component_1 = require('../widgets/search/search.component');
 var LandingComponent = (function () {
-    function LandingComponent(router) {
-        this.router = router;
+    function LandingComponent() {
+        this.searchSize = "massive";
     }
-    LandingComponent.prototype.onSubmit = function (data) {
-        this.data = JSON.stringify(data, null, 2);
-        console.log(this.data);
-        this.router.navigate(['Videos']);
-    };
     LandingComponent = __decorate([
         core_1.Component({
             selector: 'landing',
             templateUrl: 'app/landing/landing.component.html',
-            styleUrls: ['app/landing/landing.css']
+            styleUrls: ['app/landing/landing.css'],
+            directives: [search_component_1.SearchComponent]
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router])
+        __metadata('design:paramtypes', [])
     ], LandingComponent);
     return LandingComponent;
 }());

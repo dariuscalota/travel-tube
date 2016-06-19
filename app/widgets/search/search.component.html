@@ -1,0 +1,6 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <div [ngClass]="searchSize" class="ui fluid icon input">
+        <input ngControl="search" type="text" placeholder="Where do you want to go?...">
+        <i class="search icon"></i>
+    </div>
+</form>
