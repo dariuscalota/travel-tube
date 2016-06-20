@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VideoService } from '../services/video.service';
 import { RouteParams } from '@angular/router-deprecated';
 import { SearchComponent } from '../widgets/search/search.component';
+declare var $:any;
 
 @Component ({
     selector: 'videos',
