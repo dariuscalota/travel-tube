@@ -9,6 +9,12 @@ In root folder run:
 $ npm install
 ```
 
+Install older version of rxjs
+
+```sh
+$ npm install --save rxjs@^5.0.0-beta.6
+```
+
 And to start application run:
 
 ```sh
