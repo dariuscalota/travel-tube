@@ -21,6 +21,10 @@ var VideoService = (function () {
         return this._http.get(this._url + "?search=" + params)
             .map(function (res) { return res.json(); });
     };
+    VideoService.prototype.getVideo = function (id) {
+        return this._http.get(this._url + "/" + id)
+            .map(function (res) { return res.json(); });
+    };
     VideoService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

@@ -1,0 +1,16 @@
+<div *ngIf="!isActive(['Landing'])" class="ui stackable large menu">
+    <div class="item" [routerLink]="['Landing']">
+        <img src="assets/images/logo_small.png">
+    </div>
+    <a class="item" [class.active]="_router.isRouteActive(_router.generate(['/Videos']))" [routerLink]="['Videos']">Videos</a>
+    <a class="item">Offers</a>
+    <a class="item">Contact</a>
+    <div class="right menu">
+        <div class="item">
+            <div class="ui primary button">Log In</div>
+        </div>
+        <div class="item">
+            <div class="ui primary button">Sign Up</div>
+        </div>
+    </div>
+</div>

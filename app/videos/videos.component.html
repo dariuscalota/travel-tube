@@ -1,20 +1,3 @@
-<div class="ui stackable large menu">
-    <div class="item">
-        <img src="assets/images/logo_small.png">
-    </div>
-    <a class="active item">Videos</a>
-    <a class="item">Offers</a>
-    <a class="item">Contact</a>
-    <div class="right menu">
-        <div class="item">
-            <div class="ui primary button">Log In</div>
-        </div>
-        <div class="item">
-            <div class="ui primary button">Sign Up</div>
-        </div>
-    </div>
-</div>
-
 <div class="fourteen wide column videos">
     <div class="ui two column stackable grid container">
         <div class="column">
@@ -28,14 +11,12 @@
 
     </div>
 
-    <div *ngIf="isLoading">
-        <div class="ui large centered loader active inverted"></div>
-    </div>
+    <spinner [isLoading]="isLoading"></spinner>
 
     <br/>
     <br/>
     <div class="ui link centered cards">
-        <div *ngFor="let video of videos" class="card">
+        <div *ngFor="let video of videos" class="card" [routerLink]="['Vid', { title:video.title, _id: video._id }]" >
             <div class="image">
                 <img #levideo src="{{video.thumbnail}}">
             </div>

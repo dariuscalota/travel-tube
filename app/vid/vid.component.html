@@ -1,0 +1,65 @@
+<spinner [isLoading]="isLoading"></spinner>
+<div class="ui two column stackable grid center aligned">
+
+    <div class="five wide column">
+        <div *ngIf="video" class="ui sizer vertical segment">
+
+            <div class="ui card fluid card">
+                <div class="content right aligned">
+                    <div class="header">
+                        <h1>{{video.title}}</h1>
+                    </div>
+                    <div class="meta">{{video.modified}}</div>
+                    <div class="description">
+                        <div class="ui piled segment">
+                            <p>
+                                {{video.description}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="extra content center aligned">
+                    <br>
+
+                    <div class="ui small blue statistic">
+                        <div class="value">
+                            <i class="plane icon"></i> 29
+                        </div>
+                        <div class="label">
+                            Go's
+                        </div>
+                    </div>
+
+                    <div class="ui small violet statistic">
+                        <div class="value">
+                            <i class="eye icon"></i> 523
+                        </div>
+                        <div class="label">
+                            Hits
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui divider"></div>
+
+                <div class="ui blue tag labels">
+                    <a *ngFor="let tag of video.tags" class="ui label">
+                        {{tag}}
+                    </a>
+                </div>
+                <br>
+
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ten wide column">
+        <div class="ui embed my-video"></div>
+
+    </div>
+
+</div>

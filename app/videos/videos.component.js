@@ -8,10 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+// angular
 var core_1 = require('@angular/core');
-var video_service_1 = require('../services/video.service');
 var router_deprecated_1 = require('@angular/router-deprecated');
+// services
+var video_service_1 = require('../services/video.service');
+// components
 var search_component_1 = require('../widgets/search/search.component');
+var spinner_component_1 = require('../widgets/spinner/spinner.component');
 var VideosComponent = (function () {
     function VideosComponent(_videoService, _routeParams) {
         this._videoService = _videoService;
@@ -35,7 +39,7 @@ var VideosComponent = (function () {
             templateUrl: 'app/videos/videos.component.html',
             styleUrls: ['app/videos/videos.css'],
             providers: [video_service_1.VideoService],
-            directives: [search_component_1.SearchComponent]
+            directives: [search_component_1.SearchComponent, spinner_component_1.SpinnerComponent, router_deprecated_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [video_service_1.VideoService, router_deprecated_1.RouteParams])
     ], VideosComponent);

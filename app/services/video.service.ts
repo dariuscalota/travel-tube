@@ -17,4 +17,8 @@ export class VideoService {
         return this._http.get(this._url+"?search="+params)
             .map(res => res.json());
     }
+    getVideo(id:string) : Observable<Video> {
+        return this._http.get(this._url+"/"+id)
+            .map(res => res.json());
+    }
 }
