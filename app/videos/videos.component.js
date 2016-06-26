@@ -16,6 +16,9 @@ var video_service_1 = require('../services/video.service');
 // components
 var search_component_1 = require('../widgets/search/search.component');
 var spinner_component_1 = require('../widgets/spinner/spinner.component');
+// pipes
+var summary_pipe_1 = require('../pipes/summary.pipe');
+var customdate_pipe_1 = require('../pipes/customdate.pipe');
 var VideosComponent = (function () {
     function VideosComponent(_videoService, _routeParams) {
         this._videoService = _videoService;
@@ -39,7 +42,9 @@ var VideosComponent = (function () {
             templateUrl: 'app/videos/videos.component.html',
             styleUrls: ['app/videos/videos.css'],
             providers: [video_service_1.VideoService],
-            directives: [search_component_1.SearchComponent, spinner_component_1.SpinnerComponent, router_deprecated_1.ROUTER_DIRECTIVES]
+            directives: [search_component_1.SearchComponent, spinner_component_1.SpinnerComponent, router_deprecated_1.ROUTER_DIRECTIVES],
+            pipes: [summary_pipe_1.SummaryPipe, customdate_pipe_1.CustomDatePipe],
+            host: { 'class': 'ng-animate videos' }
         }), 
         __metadata('design:paramtypes', [video_service_1.VideoService, router_deprecated_1.RouteParams])
     ], VideosComponent);

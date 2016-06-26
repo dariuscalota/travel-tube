@@ -1,0 +1,23 @@
+.my-video {
+    margin-top:12px;
+}
+:host(.vid){
+    position: fixed;
+    width: 100%;
+    height:100%;
+    padding:0px;
+    margin: 0px;
+    -webkit-transition: all ease-in 0.5s;
+    transition: all ease-in 0.5s;
+}
+
+:host(.vid.ng-enter) {
+    transform: rotateY(90deg);
+    opacity: 0;
+}
+
+:host(.vid.ng-enter-active) {
+    transform: rotateY(0deg);
+    opacity: 1;
+    
+}

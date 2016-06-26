@@ -1,6 +1,22 @@
-.videos {
+:host(.videos) {
     /*background-color: rgb(255, 255, 255);*/
     padding: 20px;
+    width:100%;
+    height:100%;
+    position: fixed;
+    -webkit-transition: all ease-in 0.3s;
+    transition: all ease-in 0.3s;
+}
+
+:host(.videos.ng-enter) {
+    transform: rotateY(90deg);
+    opacity: 0;
+}
+
+:host(.videos.ng-enter-active) {
+    transform: rotateY(0deg);
+    opacity: 1;
+    
 }
 
 .loader {

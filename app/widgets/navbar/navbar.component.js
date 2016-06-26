@@ -10,6 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
+var register_component_1 = require('../register/register.component');
+var login_component_1 = require('../login/login.component');
 var NavbarComponent = (function () {
     function NavbarComponent(_router) {
         this._router = _router;
@@ -17,11 +19,17 @@ var NavbarComponent = (function () {
     NavbarComponent.prototype.isActive = function (instruction) {
         return this._router.isRouteActive(this._router.generate(instruction));
     };
+    NavbarComponent.prototype.onRegisterClick = function () {
+        $('.ui.modal.register').modal('show');
+    };
+    NavbarComponent.prototype.onLoginClick = function () {
+        $('.ui.modal.login').modal('show');
+    };
     NavbarComponent = __decorate([
         core_1.Component({
             selector: 'navbar',
             templateUrl: 'app/widgets/navbar/navbar.component.html',
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES]
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES, register_component_1.RegisterComponent, login_component_1.LoginComponent]
         }), 
         __metadata('design:paramtypes', [router_deprecated_1.Router])
     ], NavbarComponent);

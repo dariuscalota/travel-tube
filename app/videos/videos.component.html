@@ -1,38 +1,45 @@
-<div class="fourteen wide column videos">
-    <div class="ui two column stackable grid container">
-        <div class="column">
-            <h3 class="ui block header">
-                Search results for "{{searchParams}}"
-            </h3>
-        </div>
-        <div class="column">
-            <search [searchSize]="searchSize"></search>
-        </div>
-
-    </div>
-
-    <spinner [isLoading]="isLoading"></spinner>
-
-    <br/>
-    <br/>
-    <div class="ui link centered cards">
-        <div *ngFor="let video of videos" class="card" [routerLink]="['Vid', { title:video.title, _id: video._id }]" >
-            <div class="image">
-                <img #levideo src="{{video.thumbnail}}">
+<div class="videos">
+    <div class="fourteen wide column">
+        <div class="ui two column stackable grid container">
+            <div class="column">
+                <h3 class="ui block header">
+                    Search results for "{{searchParams}}"
+                </h3>
             </div>
-            <div class="content">
-                <div class="header">{{video.title}}</div>
-                <div class="meta">
-                    <a>location</a>
-                </div>
-                <div class="description">
-                    {{video.description}}
-                </div>
+            <div class="column">
+                <search [searchSize]="searchSize"></search>
             </div>
-            <div class="extra content">
-                <span class="right floated">
-                    {{ video.modified }}
+
+        </div>
+
+        <spinner [isLoading]="isLoading"></spinner>
+
+        <br/>
+        <br/>
+        <div class="ui link centered cards">
+            <div *ngFor="let video of videos" class="card" [routerLink]="['Vid', { title:video.title, _id: video._id }]">
+                <div class="image">
+                    <img style="height: 160px !important;" #levideo src="{{video.thumbnail}}">
+                </div>
+                <div class="content">
+                    <div class="header">{{video.title}}</div>
+                    <div class="meta">
+                        <i class="map icon"></i> <i>location</i>
+                    </div>
+                    <div class="description">
+                        {{video.description | summary:100 }}
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="left floated ui mini blue statistic">
+                        <div class="value">
+                            <i class="eye icon"></i> 523
+                        </div>
+                    </div>
+                    <span class="right floated">
+                    <i class="clock icon"></i> {{ video.modified | customdate | date:"shortDate" }}
                 </span>
+                </div>
             </div>
         </div>
     </div>

@@ -9,22 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var search_component_1 = require('../widgets/search/search.component');
-var LandingComponent = (function () {
-    function LandingComponent() {
-        this.searchSize = "massive";
+var LoginComponent = (function () {
+    function LoginComponent() {
     }
-    LandingComponent = __decorate([
+    LoginComponent = __decorate([
         core_1.Component({
-            selector: 'landing',
-            templateUrl: 'app/landing/landing.component.html',
-            styleUrls: ['app/landing/landing.css'],
-            directives: [search_component_1.SearchComponent],
-            host: { 'class': 'ng-animate landing' }
+            selector: 'my-login',
+            templateUrl: 'app/widgets/login/login.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], LandingComponent);
-    return LandingComponent;
+    ], LoginComponent);
+    return LoginComponent;
 }());
-exports.LandingComponent = LandingComponent;
-//# sourceMappingURL=landing.component.js.map
+exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map

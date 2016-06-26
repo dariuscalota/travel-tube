@@ -7,10 +7,13 @@
     <a class="item">Contact</a>
     <div class="right menu">
         <div class="item">
-            <div class="ui primary button">Log In</div>
+            <div (click)="onLoginClick()" class="ui primary button">Log In</div>
         </div>
         <div class="item">
-            <div class="ui primary button">Sign Up</div>
+            <div (click)="onRegisterClick()" class="ui primary button">Sign Up</div>
         </div>
     </div>
 </div>
+
+<my-register></my-register>
+<my-login></my-login>

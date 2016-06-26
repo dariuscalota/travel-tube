@@ -9,22 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var search_component_1 = require('../widgets/search/search.component');
-var LandingComponent = (function () {
-    function LandingComponent() {
-        this.searchSize = "massive";
+var CustomDatePipe = (function () {
+    function CustomDatePipe() {
     }
-    LandingComponent = __decorate([
-        core_1.Component({
-            selector: 'landing',
-            templateUrl: 'app/landing/landing.component.html',
-            styleUrls: ['app/landing/landing.css'],
-            directives: [search_component_1.SearchComponent],
-            host: { 'class': 'ng-animate landing' }
+    CustomDatePipe.prototype.transform = function (value, args) {
+        // var limit = (args) ? parseInt(args) : "value";
+        return new Date(value);
+    };
+    CustomDatePipe = __decorate([
+        core_1.Pipe({
+            name: 'customdate'
         }), 
         __metadata('design:paramtypes', [])
-    ], LandingComponent);
-    return LandingComponent;
+    ], CustomDatePipe);
+    return CustomDatePipe;
 }());
-exports.LandingComponent = LandingComponent;
-//# sourceMappingURL=landing.component.js.map
+exports.CustomDatePipe = CustomDatePipe;
+//# sourceMappingURL=customdate.pipe.js.map

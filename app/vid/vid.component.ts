@@ -21,11 +21,8 @@ import { SpinnerComponent } from '../widgets/spinner/spinner.component';
     templateUrl: 'app/vid/vid.component.html',
     providers: [VideoService],
     directives: [SpinnerComponent],
-    styles: [`
-        .my-video {
-            margin-top:12px;
-        }
-    `]
+    styleUrls: ['app/vid/vid.css'],
+    host: {'class' : 'ng-animate vid'}
 })
 
 export class VidComponent implements OnInit{

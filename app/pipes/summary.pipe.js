@@ -9,22 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var search_component_1 = require('../widgets/search/search.component');
-var LandingComponent = (function () {
-    function LandingComponent() {
-        this.searchSize = "massive";
+var SummaryPipe = (function () {
+    function SummaryPipe() {
     }
-    LandingComponent = __decorate([
-        core_1.Component({
-            selector: 'landing',
-            templateUrl: 'app/landing/landing.component.html',
-            styleUrls: ['app/landing/landing.css'],
-            directives: [search_component_1.SearchComponent],
-            host: { 'class': 'ng-animate landing' }
+    SummaryPipe.prototype.transform = function (value, args) {
+        var limit = (args) ? parseInt(args) : 50;
+        if (value) {
+            return value.substring(0, limit) + "...";
+        }
+    };
+    SummaryPipe = __decorate([
+        core_1.Pipe({
+            name: 'summary'
         }), 
         __metadata('design:paramtypes', [])
-    ], LandingComponent);
-    return LandingComponent;
+    ], SummaryPipe);
+    return SummaryPipe;
 }());
-exports.LandingComponent = LandingComponent;
-//# sourceMappingURL=landing.component.js.map
+exports.SummaryPipe = SummaryPipe;
+//# sourceMappingURL=summary.pipe.js.map

@@ -5,7 +5,8 @@ import { SearchComponent } from '../widgets/search/search.component';
     selector: 'landing',
     templateUrl: 'app/landing/landing.component.html',
     styleUrls: ['app/landing/landing.css'],
-    directives: [SearchComponent]
+    directives: [SearchComponent],
+    host: {'class' : 'ng-animate landing'}
 })
 
 export class LandingComponent {

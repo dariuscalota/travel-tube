@@ -12,12 +12,19 @@ import { Video } from '../models/video';
 import { SearchComponent } from '../widgets/search/search.component';
 import { SpinnerComponent } from '../widgets/spinner/spinner.component';
 
+// pipes
+import {SummaryPipe} from '../pipes/summary.pipe';
+import {CustomDatePipe} from '../pipes/customdate.pipe';
+
 @Component ({
     selector: 'videos',
     templateUrl: 'app/videos/videos.component.html',
     styleUrls: ['app/videos/videos.css'],
     providers: [VideoService],
-    directives: [SearchComponent, SpinnerComponent, ROUTER_DIRECTIVES]
+    directives: [SearchComponent, SpinnerComponent, ROUTER_DIRECTIVES],
+    pipes: [SummaryPipe,CustomDatePipe],
+    host: {'class' : 'ng-animate videos'}
+
 })
 
 export class VideosComponent implements OnInit{

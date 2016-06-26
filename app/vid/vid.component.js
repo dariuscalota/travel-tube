@@ -59,7 +59,8 @@ var VidComponent = (function () {
             templateUrl: 'app/vid/vid.component.html',
             providers: [video_service_1.VideoService],
             directives: [spinner_component_1.SpinnerComponent],
-            styles: ["\n        .my-video {\n            margin-top:12px;\n        }\n    "]
+            styleUrls: ['app/vid/vid.css'],
+            host: { 'class': 'ng-animate vid' }
         }), 
         __metadata('design:paramtypes', [video_service_1.VideoService, router_deprecated_1.RouteParams])
     ], VidComponent);
