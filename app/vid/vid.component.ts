@@ -8,29 +8,56 @@ import { Video } from '../models/video';
 // services
 import { VideoService } from '../services/video.service';
 
-// utils
-declare var $:any; 
-
 // components
 import { SpinnerComponent } from '../widgets/spinner/spinner.component';
 
+//pipes
+import { CustomDatePipe } from '../pipes/customdate.pipe';
+
+// utils
+declare var google: any;
+declare var $: any;
 
 
-@Component ({
+@Component({
     selector: 'vid',
     templateUrl: 'app/vid/vid.component.html',
     providers: [VideoService],
     directives: [SpinnerComponent],
     styleUrls: ['app/vid/vid.css'],
-    host: {'class' : 'ng-animate vid'}
+    host: { 'class': 'ng-animate vid' },
+    pipes: [CustomDatePipe]
 })
 
-export class VidComponent implements OnInit{
+export class VidComponent implements OnInit {
     id: string;
     isLoading: boolean = true;
     video;
 
     constructor(private _videoService: VideoService, private _routeParams: RouteParams) {
+    }
+
+    initMap() {
+        
+        $(".ui.stackable.large.menu").css({
+            "opacity":"0.3",
+            "filter": "blur(5px)",
+            "-webkit-filter": "blur(5px)"
+        });
+        $(".five.wide.column").css({
+            "opacity": "0.3",
+            "filter": "blur(5px)",
+            "-webkit-filter": "blur(5px)"
+        });
+        $(".ui.segment.my-video-toolbar").css({
+            "opacity": "0.3",
+            "filter": "blur(5px)",
+            "-webkit-filter": "blur(5px)"
+        });
+        $("body").css({
+            "background": "none",
+            "background-color": "black"
+        });
     }
 
     ngOnInit() {
@@ -40,24 +67,36 @@ export class VidComponent implements OnInit{
             .subscribe(video => {
                 this.isLoading = false;
                 this.video = video;
+
+                // set placehodler picture and source for video
                 $('.ui.embed').embed({
                     source: this.getVideoSource(),
                     id: this.getVideoId(),
                     placeholder: video.thumbnail
                 });
                 
+                // after placeholder for video loaded, load google map
+                $('img').attr('class', 'placeholder').load(function() {  
+                    var map = new google.maps.Map(document.getElementById("map"), {
+                        center: {lat: -34.397, lng: 150.644},
+                        zoom: 8
+                    }); 
+                });  
+                
+                
+
             });
     }
 
-    getVideoSource():string {
-        if(this.video.videoUrl.indexOf("vimeo")===-1){
+    getVideoSource(): string {
+        if (this.video.videoUrl.indexOf("vimeo") === -1) {
             return "youtube";
         }
         return "vimeo";
     }
 
-    getVideoId():string {
-        if(this.getVideoSource() ==="youtube"){
+    getVideoId(): string {
+        if (this.getVideoSource() === "youtube") {
             let video_id = this.video.videoUrl.split('v=')[1];
             let ampersandPosition = video_id.indexOf('&');
             if (ampersandPosition != -1) {

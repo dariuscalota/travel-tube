@@ -6,45 +6,30 @@
             <div *ngIf="video" class="ui sizer vertical segment">
 
                 <div class="ui card fluid card">
-                    <div class="content right aligned">
+                    <div class="content">
                         <div class="header">
-                            <h1>{{video.title}}</h1>
+                            <h1 class="vid-title">{{video.title | uppercase}}</h1>
                         </div>
-                        <div class="meta">{{video.modified}}</div>
                         <div class="description">
-                            <div class="ui piled segment">
+                            <div class="ui piled segment inverted blue vid-description">
                                 <p>
                                     {{video.description}}
                                 </p>
                             </div>
                         </div>
+                        <br/>
+                        <div class="meta right aligned">{{video.modified | customdate | date:'fullDate' }}</div>
                     </div>
                     <div class="extra content center aligned">
                         <br>
-
-                        <div class="ui small blue statistic">
-                            <div class="value">
-                                <i class="plane icon"></i> 29
-                            </div>
-                            <div class="label">
-                                Go's
-                            </div>
-                        </div>
-
-                        <div class="ui small violet statistic">
-                            <div class="value">
-                                <i class="eye icon"></i> 523
-                            </div>
-                            <div class="label">
-                                Hits
-                            </div>
-                        </div>
+                        <div id="map"></div>
+                        
                     </div>
 
                     <div class="ui divider"></div>
 
                     <div class="ui blue tag labels">
-                        <a *ngFor="let tag of video.tags" class="ui label">
+                        <a *ngFor="let tag of video.tags" class="ui label" (click)="initMap()">
                         {{tag}}
                     </a>
                     </div>
@@ -59,7 +44,28 @@
         </div>
 
         <div class="ten wide column">
-            <div class="ui embed my-video"></div>
+            <div class="ui embed my-video" id="my-video"></div>
+            <div class="ui segment my-video-toolbar">
+
+                <div class="ui labeled massive button left aligned" tabindex="0">
+                    <div class="ui blue massive button">
+                        <i class="plane icon"></i> Go!
+                    </div>
+                    <a class="ui basic blue left pointing label">
+                        1,048
+                    </a>
+                </div>
+
+                <div class="ui small violet statistic right aligned">
+                    <div class="value">
+                        <i class="eye icon"></i> 523
+                    </div>
+                    <div class="label">
+                        Hits
+                    </div>
+                </div>
+                
+            </div>
 
         </div>
 

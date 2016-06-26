@@ -1,6 +1,12 @@
 body {
-    background: url(../../assets/images/background.jpg) no-repeat center center fixed !important; 
+    background: url(../../assets/images/background.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover !important;
      -moz-background-size: cover !important;
     -o-background-size: cover !important;
 }
+
+#map {
+    height:300px;
+    width:100%;
+}
+
