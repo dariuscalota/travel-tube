@@ -23,13 +23,13 @@
                     <div class="extra content center aligned">
                         <br>
                         <div id="map"></div>
-                        
+
                     </div>
 
                     <div class="ui divider"></div>
 
                     <div class="ui blue tag labels">
-                        <a *ngFor="let tag of video.tags" class="ui label" (click)="initMap()">
+                        <a *ngFor="let tag of video.tags" class="ui label">
                         {{tag}}
                     </a>
                     </div>
@@ -44,17 +44,22 @@
         </div>
 
         <div class="ten wide column">
-            <div class="ui embed my-video" id="my-video"></div>
+            <div class="ui embed my-video" id="my-video">
+
+            </div>
+
             <div class="ui segment my-video-toolbar">
+
 
                 <div class="ui labeled massive button left aligned" tabindex="0">
                     <div class="ui blue massive button">
                         <i class="plane icon"></i> Go!
                     </div>
                     <a class="ui basic blue left pointing label">
-                        1,048
-                    </a>
+                            1,048
+                        </a>
                 </div>
+
 
                 <div class="ui small violet statistic right aligned">
                     <div class="value">
@@ -64,7 +69,7 @@
                         Hits
                     </div>
                 </div>
-                
+
             </div>
 
         </div>

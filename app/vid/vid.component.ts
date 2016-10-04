@@ -37,28 +37,28 @@ export class VidComponent implements OnInit {
     constructor(private _videoService: VideoService, private _routeParams: RouteParams) {
     }
 
-    initMap() {
+    // initMap() {
         
-        $(".ui.stackable.large.menu").css({
-            "opacity":"0.3",
-            "filter": "blur(5px)",
-            "-webkit-filter": "blur(5px)"
-        });
-        $(".five.wide.column").css({
-            "opacity": "0.3",
-            "filter": "blur(5px)",
-            "-webkit-filter": "blur(5px)"
-        });
-        $(".ui.segment.my-video-toolbar").css({
-            "opacity": "0.3",
-            "filter": "blur(5px)",
-            "-webkit-filter": "blur(5px)"
-        });
-        $("body").css({
-            "background": "none",
-            "background-color": "black"
-        });
-    }
+    //     $(".ui.stackable.large.menu").css({
+    //         "opacity":"0.3",
+    //         "filter": "blur(5px)",
+    //         "-webkit-filter": "blur(5px)"
+    //     });
+    //     $(".five.wide.column").css({
+    //         "opacity": "0.3",
+    //         "filter": "blur(5px)",
+    //         "-webkit-filter": "blur(5px)"
+    //     });
+    //     $(".ui.segment.my-video-toolbar").css({
+    //         "opacity": "0.3",
+    //         "filter": "blur(5px)",
+    //         "-webkit-filter": "blur(5px)"
+    //     });
+    //     $("body").css({
+    //         "background": "none",
+    //         "background-color": "black"
+    //     });
+    // }
 
     ngOnInit() {
         
@@ -78,9 +78,9 @@ export class VidComponent implements OnInit {
                 // after placeholder for video loaded, load google map
                 $('img').attr('class', 'placeholder').load(function() {  
                     var map = new google.maps.Map(document.getElementById("map"), {
-                        center: {lat: -34.397, lng: 150.644},
+                        center: {lat: 45.7410431, lng: 21.1465501},
                         zoom: 8
-                    }); 
+                    });
                 });  
                 
                 
